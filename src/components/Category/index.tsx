@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useCategory } from "../../hooks/fetcher";
 import { ICategory } from "../../types";
 

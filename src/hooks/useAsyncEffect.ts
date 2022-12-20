@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
 const useAsyncEffect = (proc: () => Promise<void>, s?: any) => {
-    useEffect(() => {
-        (async () => await proc())();
-    }, s);
+  useEffect(() => {
+    (async () => await proc())();
+  }, [proc]);
 };
 
 export default useAsyncEffect;
