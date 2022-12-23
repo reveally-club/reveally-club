@@ -1,55 +1,21 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import Loading from "../components/Loading";
-import PostCard from "../components/PostCard";
-import { useThreads } from "../hooks/fetcher";
-import { IThread } from "../types";
-
-import Layout from "../components/Layout";
+import { ThreadState, useListThreadsQuery } from "../modules/reducers/thread";
+import Layout from "./common/Layout";
+import Loading from "./common/Loading";
+import ThreadCard from "./threads/components/ThreadCard";
 
 const Home = () => {
-  const { data, isLoading, setSize } = useThreads();
-  function handleScroll() {
-    if (
-      document.documentElement.scrollTop + window.innerHeight ===
-      document.documentElement.scrollHeight
-    ) {
-      setSize((size: number) => size + 1);
-    }
+  const { data: thread, isLoading, isFetching } = useListThreadsQuery();
+
+  if (isLoading) {
+    return <Loading />;
   }
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <Layout>
-      <section
-        id="post"
-        className="container max-w-6xl flex flex-col gap-4 p-2 xl:m-4"
-      >
-        {isLoading ? (
-          <Loading />
-        ) : (
-          data.map((data: IThread) => (
-            <PostCard
-              key={data.id}
-              id={data.id}
-              title={data.title}
-              summary={data.summary}
-              content={data.content}
-              author={data.author}
-              totalReward={data.totalReward}
-              rewardCount={data.rewardCount}
-              thumbnail={data.thumbnail}
-              participant={data.participant}
-            />
-          ))
-        )}
-      </section>
+      <div className="container flex flex-col gap-4">
+        {thread?.data.data.map((data: ThreadState, index: number) => (
+          <ThreadCard key={index} {...data} />
+        ))}
+      </div>
     </Layout>
   );
 };
