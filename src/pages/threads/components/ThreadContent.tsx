@@ -3,14 +3,15 @@ import Image from "next/image";
 
 import { shortenAddress } from "../../../modules/utils";
 import { ThreadState } from "../../../modules/reducers/thread";
+import Viewer from "../../common/Viewer";
 
 const ThreadContent = (props: ThreadState) => {
   return (
-    <div className="w-full">
+    <div className="w-full p-4">
       <div className="flex mb-4">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
-            {/* <h6 className="text-sm">{shortenAddress(props.author)}</h6> */}
+            <h6 className="text-sm">{shortenAddress(props.author)!}</h6>
             <p className="ml-4 text-xs text-stone-500">
               {props.participant}명 참여
             </p>
@@ -36,9 +37,7 @@ const ThreadContent = (props: ThreadState) => {
         </div>
       </div>
       <h2 className="mb-4 font-bold text-2xl">{props.title}</h2>
-      <article className={`prose break-all max-w-none text-base leading-7`}>
-        {props.content}
-      </article>
+      <Viewer content={props.content} />
     </div>
   );
 };

@@ -3,6 +3,8 @@ import * as amplitude from "@amplitude/analytics-browser";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import RightNav from "./RightNav";
+import LeftNav from "./LeftNav";
 
 const Layout: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
@@ -15,7 +17,11 @@ const Layout: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div>
       <Header />
-      <main className="flex container mx-auto min-h-screen">{children!}</main>
+      <main className="flex container mx-auto min-h-screen">
+        <LeftNav />
+        {children!}
+        <RightNav />
+      </main>
       <Footer />
     </div>
   );

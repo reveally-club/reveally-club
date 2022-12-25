@@ -39,7 +39,14 @@ export const threadSlice = createApi({
     detailThread: builder.query<Response<ThreadState>, number | void>({
       query: (id = 1) => `/threads/${id}`,
     }),
+    searchThread: builder.query<ListResponse<ThreadState>, string | void>({
+      query: (text = "") => `threads/search?take=10&page=1&text=${text}`,
+    }),
   }),
 });
 
-export const { useListThreadsQuery, useDetailThreadQuery } = threadSlice;
+export const {
+  useListThreadsQuery,
+  useDetailThreadQuery,
+  useSearchThreadQuery,
+} = threadSlice;

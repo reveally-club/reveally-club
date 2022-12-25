@@ -11,10 +11,10 @@ const ThreadCard = (props: ThreadState) => {
       className="w-full rounded break-words border flex justify-between max-h-48"
       href={`/threads/${props.id}`}
     >
-      <div className="flex px-4 py-4">
+      <div className="flex px-1 py-2">
         <article className="w-full ml-4 overflow-auto">
           <div className="flex items-center">
-            {/* <h6 className="text-sm">{shortenAddress(props.author)}</h6> */}
+            <h6 className="text-sm">{shortenAddress(props.author)}</h6>
             <p className="ml-4 text-xs text-stone-500">
               {props.participant}명 참여
             </p>

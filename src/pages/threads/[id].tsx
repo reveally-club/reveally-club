@@ -7,14 +7,11 @@ import ThreadContent from "./components/ThreadContent";
 const ThreadsDetail = () => {
   const router = useRouter();
   const id = parseInt(router.query.id as string, 10);
-  const { data: thread, isLoading, isFetching } = useDetailThreadQuery(id);
+  const { data: thread, isLoading } = useDetailThreadQuery(id);
 
-  if (isLoading) {
-    return <Loading />;
-  }
   return (
     <Layout>
-      <ThreadContent {...thread!.data} />
+      {isLoading ? <Loading /> : <ThreadContent {...thread!.data} />}
     </Layout>
   );
 };

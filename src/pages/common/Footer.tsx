@@ -15,11 +15,11 @@ const Footer: React.FC = () => {
         <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-800 sm:mt-0">
           <li>
             <Link
-              href="/about"
+              href="https://litt.ly/reveally"
               target="_blank"
               className="mr-4 hover:underline md:mr-6"
             >
-              About
+              LinkTree
             </Link>
           </li>
         </ul>
