@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { init } from "@amplitude/marketing-analytics-browser";
 import {
   ExternalProvider,
   JsonRpcFetchFunc,
@@ -11,6 +12,10 @@ import wrapper from "../modules/store/store";
 import "./globals.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
+  init(process.env.NEXT_PUBLIC_AMPLITUDE_KEY!, "", {
+    pageViewTracking: true,
+  });
+
   const getLibrary = (provider: ExternalProvider | JsonRpcFetchFunc) => {
     const library = new Web3Provider(provider);
     library.pollingInterval = 12000;

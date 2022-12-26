@@ -1,12 +1,31 @@
 import Link from "next/link";
 import React from "react";
+import { track } from "@amplitude/analytics-browser";
 
 const LeftNav: React.FC = () => {
+  const onClickLink = (path: string): void => {
+    const eventProperties = {
+      Navigation: path,
+    };
+
+    track("Click Project Information", eventProperties);
+  };
+
+  const onClickAdRequest = (): void => {
+    track("Click Ad Request Button");
+  };
+
   return (
     <div className="w-48 hidden border-r pt-4 lg:block">
       <ul className="flex flex-col gap-2 text-sm">
         <li>
-          <Link className="flex items-center hover:font-bold" href="/">
+          <Link
+            className="flex items-center hover:font-bold"
+            href="/"
+            onClick={() => {
+              onClickLink("Home");
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -29,6 +48,7 @@ const LeftNav: React.FC = () => {
             className="flex rounded-md text-center justify-center p-2 items-center hover:font-bold text-white text-sm bg-gradient-to-r from-sky-400 to-violet-400"
             href="https://litt.ly/reveally"
             target="_blank"
+            onClick={onClickAdRequest}
           >
             무료로 광고 <br /> 업로드
           </Link>

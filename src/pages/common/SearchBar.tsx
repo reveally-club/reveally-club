@@ -1,8 +1,10 @@
 import { useState } from "react";
-import useDebounce from "../../modules/hooks/useDebounce";
-import { useSearchThreadQuery } from "../../modules/reducers/thread";
-import useDidMountEffect from "../../modules/hooks/useDidMountEffect";
 import { useRouter } from "next/router";
+import { useSearchThreadQuery } from "../../modules/reducers/thread";
+import { track } from "@amplitude/analytics-browser";
+
+import useDebounce from "../../modules/hooks/useDebounce";
+import useDidMountEffect from "../../modules/hooks/useDidMountEffect";
 
 const SearchBar = () => {
   const router = useRouter();
@@ -12,6 +14,14 @@ const SearchBar = () => {
   const debouncedText = useDebounce(text, 500);
 
   const { data: thread } = useSearchThreadQuery(debouncedText);
+
+  useDidMountEffect(() => {
+    const eventProperties = {
+      "Search Term": text,
+    };
+
+    track("Search Content", eventProperties);
+  }, [text]);
 
   return (
     <>
