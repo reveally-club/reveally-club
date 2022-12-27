@@ -17,16 +17,14 @@ const ThreadCard = (props: ThreadState) => {
     };
 
     new Identify().set(`Read Count`, 1);
-    track("Click Project Information", eventProperties);
+    track("Click Content", eventProperties);
   };
 
   return (
     <Link
       className="w-full rounded break-words border flex justify-between max-h-48"
       href={`/threads/${props.id}`}
-      onClick={() => {
-        onClickLink;
-      }}
+      onClick={onClickLink}
     >
       <div className="flex px-1 py-2">
         <article className="w-full ml-4 overflow-auto">

@@ -8,7 +8,7 @@ const LeftNav: React.FC = () => {
       Navigation: path,
     };
 
-    track("Click Project Information", eventProperties);
+    track("Click Navigation", eventProperties);
   };
 
   const onClickAdRequest = (): void => {

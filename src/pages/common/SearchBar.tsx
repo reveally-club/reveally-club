@@ -1,27 +1,27 @@
-import { useState } from "react";
+import { SetStateAction, useMemo, useState } from "react";
 import { useRouter } from "next/router";
+import _, { debounce } from "lodash";
 import { useSearchThreadQuery } from "../../modules/reducers/thread";
 import { track } from "@amplitude/analytics-browser";
-
-import useDebounce from "../../modules/hooks/useDebounce";
-import useDidMountEffect from "../../modules/hooks/useDidMountEffect";
 
 const SearchBar = () => {
   const router = useRouter();
   const [text, setText] = useState("");
   const [hidden, setHidden] = useState(true);
 
-  const debouncedText = useDebounce(text, 500);
-
-  const { data: thread } = useSearchThreadQuery(debouncedText);
-
-  useDidMountEffect(() => {
+  const onChange = (e: { target: { value: SetStateAction<string> } }) => {
+    setHidden(false);
+    setText(e.target.value);
     const eventProperties = {
       "Search Term": text,
     };
 
     track("Search Content", eventProperties);
-  }, [text]);
+  };
+
+  const debounceChange = useMemo(() => debounce(onChange, 500), []);
+
+  const { data: thread } = useSearchThreadQuery(text);
 
   return (
     <>
@@ -53,10 +53,7 @@ const SearchBar = () => {
             id="simple-search"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-1.5"
             placeholder="Search"
-            onChange={(e) => {
-              setHidden(false);
-              setText(e.target.value);
-            }}
+            onChange={debounceChange}
           />
         </div>
       </form>

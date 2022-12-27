@@ -1,9 +1,17 @@
+import { init } from "@amplitude/marketing-analytics-browser";
 import { ThreadState, useListThreadsQuery } from "../modules/reducers/thread";
 import Layout from "./common/Layout";
 import Loading from "./common/Loading";
 import ThreadCard from "./threads/components/ThreadCard";
 
 const Home = () => {
+  init(process.env.NEXT_PUBLIC_AMPLITUDE_KEY!, "", {
+    pageViewTracking: {
+      trackOn: () => {
+        return window.location.pathname === "/";
+      },
+    },
+  });
   const { data: thread, isLoading } = useListThreadsQuery();
 
   return (

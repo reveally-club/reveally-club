@@ -17,11 +17,6 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     activate(injectedConnector);
-    const eventProperties = {
-      "Wallet Address": account,
-    };
-
-    track("Connect Wallet", eventProperties);
   }, []);
 
   return (
@@ -54,6 +49,11 @@ const Header: React.FC = () => {
                 className="w-24 inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-white hover:bg-black mt-4 lg:mt-0"
                 onClick={() => {
                   activate(injectedConnector);
+                  const eventProperties = {
+                    "Wallet Address": account,
+                  };
+
+                  track("Connect Wallet", eventProperties);
                 }}
               >
                 지갑연결
