@@ -13,7 +13,7 @@ const SearchBar = () => {
     setHidden(false);
     setText(e.target.value);
     const eventProperties = {
-      "Search Term": text,
+      "Search Term": e.target.value,
     };
 
     track("Search Content", eventProperties);
