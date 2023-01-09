@@ -8,7 +8,7 @@ const Home = () => {
   init(process.env.NEXT_PUBLIC_AMPLITUDE_KEY!, "", {
     pageViewTracking: {
       trackOn: () => {
-        return window.location.pathname === "/";
+        return window.location.pathname === "/threads";
       },
     },
   });
