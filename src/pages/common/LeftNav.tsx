@@ -1,18 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import { track } from "@amplitude/analytics-browser";
 
 const LeftNav: React.FC = () => {
   const onClickLink = (path: string): void => {
     const eventProperties = {
       Navigation: path,
     };
-
-    track("Click Navigation", eventProperties);
-  };
-
-  const onClickAdRequest = (): void => {
-    track("Click Ad Request Button");
   };
 
   return (
@@ -48,7 +41,6 @@ const LeftNav: React.FC = () => {
             className="flex rounded-md text-center justify-center p-2 items-center hover:font-bold text-white text-sm bg-gradient-to-r from-sky-400 to-violet-400"
             href="https://litt.ly/reveally"
             target="_blank"
-            onClick={onClickAdRequest}
           >
             무료로 광고 <br /> 업로드
           </Link>

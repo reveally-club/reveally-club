@@ -2,7 +2,6 @@ import { SetStateAction, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import _, { debounce } from "lodash";
 import { useSearchThreadQuery } from "../../modules/reducers/thread";
-import { track } from "@amplitude/analytics-browser";
 
 const SearchBar = () => {
   const router = useRouter();
@@ -12,11 +11,6 @@ const SearchBar = () => {
   const onChange = (e: { target: { value: SetStateAction<string> } }) => {
     setHidden(false);
     setText(e.target.value);
-    const eventProperties = {
-      "Search Term": e.target.value,
-    };
-
-    track("Search Content", eventProperties);
   };
 
   const debounceChange = useMemo(() => debounce(onChange, 500), []);

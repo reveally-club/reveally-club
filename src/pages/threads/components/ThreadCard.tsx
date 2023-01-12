@@ -1,30 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Identify, track } from "@amplitude/analytics-browser";
 
 import { shortenAddress } from "../../../modules/utils";
 import { ThreadState } from "../../../modules/reducers/thread";
 
 const ThreadCard = (props: ThreadState) => {
-  const onClickLink = (): void => {
-    const eventProperties = {
-      ContentTitle: props.title,
-      Token: "Polygon",
-      "Reward Amount": props.totalReward / props.rewardCount,
-      "Publisher Address": props.author,
-      "Num of Participants": props.participant,
-    };
-
-    new Identify().set(`Read Count`, 1);
-    track("Click Content", eventProperties);
-  };
-
   return (
     <Link
       className="w-full rounded break-words border flex justify-between max-h-48"
       href={`/threads/${props.id}`}
-      onClick={onClickLink}
     >
       <div className="flex px-1 py-2">
         <article className="w-full ml-4 overflow-auto">

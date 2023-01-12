@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { Web3Provider } from "@ethersproject/providers";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import { useWeb3React } from "@web3-react/core";
-import { track } from "@amplitude/analytics-browser";
 import { shortenAddress } from "../../modules/utils";
 
 import Link from "next/link";
@@ -52,8 +51,6 @@ const Header: React.FC = () => {
                   const eventProperties = {
                     "Wallet Address": account,
                   };
-
-                  track("Connect Wallet", eventProperties);
                 }}
               >
                 지갑연결
