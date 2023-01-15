@@ -39,7 +39,7 @@ const LeftNav: React.FC = () => {
         <li className="mt-8 mr-8">
           <Link
             className="flex rounded-md text-center justify-center p-2 items-center hover:font-bold text-white text-sm bg-gradient-to-r from-sky-400 to-violet-400"
-            href="https://litt.ly/reveally"
+            href="https://open.kakao.com/o/gRpAvfUe"
             target="_blank"
           >
             무료로 광고 <br /> 업로드
