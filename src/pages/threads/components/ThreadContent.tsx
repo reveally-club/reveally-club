@@ -11,7 +11,7 @@ const ThreadContent = (props: ThreadState) => {
       <div className="flex mb-4">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
-            <h6 className="text-sm">{shortenAddress(props.author)!}</h6>
+            <h6 className="text-sm">{shortenAddress(props.writer)!}</h6>
             <p className="ml-4 text-xs text-stone-500">
               {props.participant}명 참여
             </p>

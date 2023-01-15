@@ -6,7 +6,7 @@ export interface ThreadState {
   thumbnail: string;
   summary: string;
   content: string;
-  author: string;
+  writer: string;
   totalReward: number;
   rewardCount: number;
   participant: number;

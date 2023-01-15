@@ -14,7 +14,7 @@ const ThreadCard = (props: ThreadState) => {
       <div className="flex px-1 py-2">
         <article className="w-full ml-4 overflow-auto">
           <div className="flex items-center">
-            <h6 className="text-sm">{shortenAddress(props.author)}</h6>
+            <h6 className="text-sm">{shortenAddress(props.writer)}</h6>
             <p className="ml-4 text-xs text-stone-500">
               {props.participant}명 참여
             </p>

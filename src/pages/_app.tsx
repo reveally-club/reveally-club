@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         <title>reveally.club</title>
         <meta name="description" content="..." />
-        <meta name="author" content="reveally.club" />
+        <meta name="writer" content="reveally.club" />
         <link rel="canonical" href="https://reveally.club" />
 
         <meta property="og:type" content="reveally.club" />
