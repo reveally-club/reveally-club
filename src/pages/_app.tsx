@@ -9,7 +9,6 @@ import {
 import { Web3ReactProvider } from "@web3-react/core";
 
 import TagManager from "react-gtm-module";
-import Sentry from "@sentry/nextjs";
 
 import wrapper from "../modules/store/store";
 import "./globals.css";
@@ -22,10 +21,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   };
 
   useEffect(() => {
-    Sentry.init({
-      dsn: "https://ceba0a69d9854bf98b26878d7ec475f5@o1156298.ingest.sentry.io/4504526067335174",
-      tracesSampleRate: 1.0,
-    });
     TagManager.initialize({ gtmId: "GTM-W6MG4BL" });
   }, []);
 
