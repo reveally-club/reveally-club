@@ -34,7 +34,7 @@ export const threadSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_BASE_URL }),
   endpoints: (builder) => ({
     listThreads: builder.query<ListResponse<ThreadState>, number | void>({
-      query: (page = 1) => `/threads?take=10&page=${page}`,
+      query: (page = 1) => `/threads?take=100&page=${page}`,
     }),
     detailThread: builder.query<Response<ThreadState>, number | void>({
       query: (id = 1) => `/threads/${id}`,
