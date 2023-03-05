@@ -13,15 +13,7 @@ const Footer: React.FC = () => {
           . All Rights Reserved.
         </span>
         <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-800 sm:mt-0">
-          <li>
-            <Link
-              href="https://litt.ly/reveally"
-              target="_blank"
-              className="mr-4 hover:underline md:mr-6"
-            >
-              LinkTree
-            </Link>
-          </li>
+          <li></li>
         </ul>
       </div>
     </footer>

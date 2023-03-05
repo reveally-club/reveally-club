@@ -1,66 +1,78 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
-import { Web3Provider } from "@ethersproject/providers";
-import { InjectedConnector } from "@web3-react/injected-connector";
-import { useWeb3React } from "@web3-react/core";
+import React, { useEffect, useState } from "react";
+
 import { shortenAddress } from "../../modules/utils";
+import { useAccount, useConnect, useDisconnect, useEnsName } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 
 import Link from "next/link";
-import SearchBar from "./SearchBar";
 
 const Header: React.FC = () => {
-  const injectedConnector = new InjectedConnector({
-    supportedChainIds: [1, 3, 4, 5, 42],
+  const { address, isConnected } = useAccount();
+  const { data: ensName } = useEnsName({ address });
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
   });
-  const { account, activate, active } = useWeb3React<Web3Provider>();
+  const { disconnect } = useDisconnect();
+
+  const [name, setName] = useState("");
 
   useEffect(() => {
-    activate(injectedConnector);
-  }, []);
+    ensName ? setName(`${ensName}`) : setName(`${shortenAddress(address!)}`);
+  }, [ensName]);
 
   return (
     <header className="border-b">
       <nav className="flex item-center justify-between flex-wrap p-2 container mx-auto md:pl-0 pr-0">
         <div className="flex items-center flex-shrink-0 mr-12">
-          <Link className="font-bold text-xl" href="/">
+          <Link
+            className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400"
+            href="/"
+          >
             Reveally.club
           </Link>
         </div>
-        <div className="block lg:hidden">
-          <button className="flex items-center px-3 py-2 border rounded text-black border-black hover:text-stone-900 hover:border-stone-900">
-            <svg
-              className="fill-current h-3 w-3"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm w-full lg:flex-grow lg:mt-0 mt-4">
-            <SearchBar />
-          </div>
-          <div className="hidden lg:flex lg:ml-16">
-            {active === false ? (
-              <button
-                className="w-24 inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-white hover:bg-black mt-4 lg:mt-0"
-                onClick={() => {
-                  activate(injectedConnector);
-                  const eventProperties = {
-                    "Wallet Address": account,
-                  };
-                }}
+        <div className="hidden w-full md:flex md:w-auto mr-4">
+          {/* <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+            <li>
+              <Link
+                href="/"
+                className="block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 hover:text-primary"
+                aria-current="page"
               >
-                지갑연결
-              </button>
-            ) : (
-              <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-white hover:bg-black mt-4 lg:mt-0">
-                {shortenAddress(account!)}
-              </button>
-            )}
-          </div>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 hover:text-primary"
+                aria-current="page"
+              >
+                Products
+              </Link>
+            </li>
+          </ul> */}
+          {isConnected ? (
+            <button
+              className="text-gray-900 py-2  bg-white hover:bg-gray-100 border focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 mt-2 mb-2 text-center inline-flex items-center"
+              onClick={() => {
+                disconnect();
+              }}
+            >
+              {name}
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="text-gray-900 py-2  bg-white hover:bg-gray-100 border focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 mt-2 mb-2 text-center inline-flex items-center"
+              onClick={() => {
+                connect();
+              }}
+            >
+              Connect Wallet
+            </button>
+          )}
         </div>
       </nav>
     </header>
