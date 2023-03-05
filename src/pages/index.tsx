@@ -100,6 +100,13 @@ const Home = () => {
                 <p className="text-gray-700 text-base">Bot Developer</p>
               </div>
             </div>
+            <div className="max-w-sm rounded overflow-hidden shadow-lg">
+              <img className="w-48" src="members/우영기.png" alt="우영기" />
+              <div className="px-4 py-4">
+                <div className="font-bold text-xl mb-1">wooma(우영기)</div>
+                <p className="text-gray-700 text-base">Project Manager</p>
+              </div>
+            </div>
           </div>
         </article>
         {/* <article className="mt-12 mb-12 flex flex-col w-full items-center">
