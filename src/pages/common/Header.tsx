@@ -23,7 +23,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="border-b">
-      <nav className="flex item-center justify-between flex-wrap p-2 container mx-auto md:pl-0 pr-0">
+      <nav className="flex item-center justify-between flex-wrap p-3 pl-3 container mx-auto md:pl-0 md:p-0 pr-0">
         <div className="flex items-center flex-shrink-0 mr-12">
           <Link
             className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400"

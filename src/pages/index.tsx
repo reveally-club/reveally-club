@@ -31,7 +31,7 @@ const Home = () => {
           <h3 className="mt-4 text-2xl italic text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">
             &quot;Enjoy the various products of the club.&quot;
           </h3>
-          <div className="mt-6 flex flex-row gap-8">
+          <div className="mt-6 flex md:flex-row flex-col gap-8">
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <img
                 className="w-full"
@@ -67,7 +67,7 @@ const Home = () => {
           <h3 className="mt-4 text-2xl italic text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">
             &quot;You can be a member if you want.&quot;
           </h3>
-          <div className="mt-6 flex flex-row gap-8">
+          <div className="mt-6 flex md:flex-row flex-col gap-8">
             <Link href="https://twitter.com/dilrong_" target="_blank">
               <div className="max-w-sm rounded overflow-hidden shadow-lg">
                 <img className="w-48" src="members/dilrong.png" alt="dilrong" />

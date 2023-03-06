@@ -9,7 +9,9 @@ const Layout: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div>
       <Header />
-      <main className="flex container mx-auto min-h-screen">{children!}</main>
+      <main className="flex container mx-auto min-h-screen md:p-0 p-4">
+        {children!}
+      </main>
       <Footer />
     </div>
   );
