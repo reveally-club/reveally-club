@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ThreadState, useListThreadsQuery } from "../modules/reducers/thread";
+import MemberCard from "./components/MemberCard";
 import Layout from "./common/Layout";
-import Loading from "./common/Loading";
+import ProductCard from "./components/ProductCard";
 
 const Home = () => {
   return (
@@ -32,34 +32,18 @@ const Home = () => {
             &quot;Enjoy the various products of the club.&quot;
           </h3>
           <div className="mt-6 flex md:flex-row flex-col gap-8">
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-              <img
-                className="w-full"
-                src="/products/whales.png"
-                alt="Whales.club"
-              />
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">Whales.club</div>
-                <p className="text-gray-700 text-base">
-                  product that tracks the wallet of an NFT whale selected by the
-                  club.
-                </p>
-              </div>
-            </div>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-              <img
-                className="w-full"
-                src="/products/life.png"
-                alt="Life.pass"
-              />
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">Life.pass</div>
-                <p className="text-gray-700 text-base">
-                  The betting target achievement service provides rewards based
-                  on the success of the participants.
-                </p>
-              </div>
-            </div>
+            <ProductCard
+              link="https://discord.gg/nNr2DRk3gp"
+              image="/products/whales.png"
+              name="Whales.club"
+              description="product that tracks the wallet of an NFT whale selected by the club."
+            />
+            <ProductCard
+              link="https://life.reveally.club"
+              image="/products/life.png"
+              name="Life.pass"
+              description="The betting target achievement service provides rewards based on the success of the participants."
+            />
           </div>
         </article>
         <article className="mt-20 flex flex-col w-full items-center">
@@ -68,53 +52,38 @@ const Home = () => {
             &quot;You can be a member if you want.&quot;
           </h3>
           <div className="mt-6 flex md:flex-row flex-col gap-8">
-            <Link href="https://twitter.com/dilrong_" target="_blank">
-              <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                <img className="w-48" src="members/dilrong.png" alt="dilrong" />
-                <div className="px-4 py-4">
-                  <div className="font-bold text-xl mb-1">Dilrong (이학성)</div>
-                  <p className="text-gray-700 text-base">Developer</p>
-                </div>
-              </div>
-            </Link>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-              <img className="w-48" src="members/dodori.png" alt="Dodori" />
-              <div className="px-4 py-4">
-                <div className="font-bold text-xl mb-1">Dodori</div>
-                <p className="text-gray-700 text-base">Marketer</p>
-              </div>
-            </div>
-            <Link href="https://twitter.com/BADBOY_WEB3" target="_blank">
-              <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                <img className="w-48" src="members/badboy.png" alt="Badboy" />
-                <div className="px-4 py-4">
-                  <div className="font-bold text-xl mb-1">Badboy</div>
-                  <p className="text-gray-700 text-base">SUPER idiot</p>
-                </div>
-              </div>
-            </Link>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-              <img className="w-48" src="members/고래절미.png" alt="고래절미" />
-              <div className="px-4 py-4">
-                <div className="font-bold text-xl mb-1">고래절미</div>
-                <p className="text-gray-700 text-base">Bot Developer</p>
-              </div>
-            </div>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-              <img className="w-48" src="members/우영기.png" alt="우영기" />
-              <div className="px-4 py-4">
-                <div className="font-bold text-xl mb-1">wooma(우영기)</div>
-                <p className="text-gray-700 text-base">Project Manager</p>
-              </div>
-            </div>
+            <MemberCard
+              link="https://twitter.com/dilrong_"
+              image="members/dilrong.png"
+              name="Dilrong (이학성)"
+              role="Developer"
+            />
+            <MemberCard
+              link="#"
+              image="members/dodori.png"
+              name="Dodori"
+              role="Marketer"
+            />
+            <MemberCard
+              link="https://twitter.com/BADBOY_WEB3"
+              image="members/badboy.png"
+              name="Badboy"
+              role="SUPER idiot"
+            />
+            <MemberCard
+              link="#"
+              image="members/고래절미.png"
+              name="고래절미"
+              role="Bot Developer"
+            />
+            <MemberCard
+              link="#"
+              image="members/우영기.png"
+              name="wooma(우영기)"
+              role="Project Manager"
+            />
           </div>
         </article>
-        {/* <article className="mt-12 mb-12 flex flex-col w-full items-center">
-          <h2 className=" text-4xl font-bold">With Us</h2>
-          <h3 className="mt-4 text-2xl italic text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">
-            &quot;believe in us.&quot;
-          </h3>
-        </article> */}
         <article className="mt-20 mb-20 flex flex-col w-full items-center">
           <h2 className=" text-4xl font-bold">Contact Us</h2>
           <h3 className="mt-4 text-2xl italic text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">

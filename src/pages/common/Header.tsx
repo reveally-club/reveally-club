@@ -40,16 +40,7 @@ const Header: React.FC = () => {
                 className="block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 hover:text-primary"
                 aria-current="page"
               >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 hover:text-primary"
-                aria-current="page"
-              >
-                Products
+                Brand
               </Link>
             </li>
           </ul> */}

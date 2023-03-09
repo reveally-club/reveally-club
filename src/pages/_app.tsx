@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-
+import { Public_Sans } from "next/font/google";
 import TagManager from "react-gtm-module";
-
 import { WagmiConfig, createClient, configureChains, mainnet } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import wrapper from "../modules/store/store";
-import "./globals.css";
+import "../styles/globals.css";
+
+const publicSans = Public_Sans({ subsets: ["latin"] });
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
@@ -30,7 +31,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       new InjectedConnector({
         chains,
         options: {
-          name: "bok.xyz",
+          name: "Reveally.club",
         },
       }),
     ],
@@ -70,7 +71,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="twitter:url" content="https://reveally.club" />
       </Head>
       <WagmiConfig client={client}>
-        <Component {...pageProps} />
+        <div className={publicSans.className}>
+          <Component {...pageProps} />
+        </div>
       </WagmiConfig>
     </>
   );

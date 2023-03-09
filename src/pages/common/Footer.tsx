@@ -12,8 +12,17 @@ const Footer: React.FC = () => {
           </a>
           . All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-800 sm:mt-0">
-          <li></li>
+        <ul className="flex flex-wrap items-center mt-3 gap-4 text-sm text-gray-800 sm:mt-0">
+          {/* <li>
+            <Link className="text-xs hover:underline" href="/brand">
+              About
+            </Link>
+          </li> */}
+          <li>
+            <Link className="text-xs hover:underline" href="/brand">
+              Brand Guide
+            </Link>
+          </li>
         </ul>
       </div>
     </footer>
