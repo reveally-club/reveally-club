@@ -28,13 +28,7 @@ const Brand = () => {
           <h3 className="text-xl">Public Sans</h3>
         </section>
         <h2 className="text-4xl font-bold mt-8">Logo</h2>
-        <section className="mt-4">
-          <img
-            className="h-32"
-            src="/brands/favicon.svg"
-            alt="reveally.club logo"
-          />
-        </section>
+        <section className="mt-4"></section>
         <h2 className="text-4xl font-bold mt-8">Resource</h2>
       </section>
     </Layout>

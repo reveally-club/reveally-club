@@ -10,7 +10,7 @@ interface Props {
 
 const MemberCard = ({ link, image, name, role }: Props) => {
   return (
-    <Link href={link} target="_blank">
+    <Link href={`${link}`} target="_blank">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-48" src={image} alt={name} />
         <div className="px-4 py-4">

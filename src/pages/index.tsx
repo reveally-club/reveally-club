@@ -31,18 +31,36 @@ const Home = () => {
           <h3 className="mt-4 text-2xl italic text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">
             &quot;Enjoy the various products of the club.&quot;
           </h3>
-          <div className="mt-6 flex md:flex-row flex-col gap-8">
+          <div className="mt-6 flex flex-wrap justify-center md:flex-row flex-col gap-8">
             <ProductCard
               link="https://discord.gg/nNr2DRk3gp"
-              image="/products/whales.png"
+              image="/products/whales-club.png"
               name="Whales.club"
-              description="product that tracks the wallet of an NFT whale selected by the club."
+              description="NFT Wallet Wallet Tracking Data Visualization Solution, Whales.club"
             />
             <ProductCard
               link="https://life.reveally.club"
-              image="/products/life.png"
+              image="/products/life-pass.png"
               name="Life.pass"
-              description="The betting target achievement service provides rewards based on the success of the participants."
+              description="Betting Platform Services to Achieve Your Objectives, life.pass a.k.a 갓생.패쓰"
+            />
+            {/* <ProductCard
+              link="https://nft.reveally.club"
+              image="/products/nft-club.png"
+              name="NFT.club"
+              description="Secure NFT Solutions with NFT Metadata Inspection, NFT.club"
+            /> */}
+            <ProductCard
+              link="https://twitter.reveally.club"
+              image="/products/twitter-club.png"
+              name="Twitter.club"
+              description="Solutions to help you use Twitter more simply and efficiently, Twitter.club"
+            />
+            <ProductCard
+              link="https://discord.gg/nNr2DRk3gp"
+              image="/products/mochi-club.png"
+              name="Mochi.club"
+              description="Simple but effective performance management solution, Mochi.club"
             />
           </div>
         </article>
@@ -51,34 +69,34 @@ const Home = () => {
           <h3 className="mt-4 text-2xl italic text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">
             &quot;You can be a member if you want.&quot;
           </h3>
-          <div className="mt-6 flex md:flex-row flex-col gap-8">
+          <div className="mt-6 flex flex-wrap justify-center  md:flex-row flex-col gap-8">
             <MemberCard
               link="https://twitter.com/dilrong_"
-              image="members/dilrong.png"
+              image="/members/dilrong.png"
               name="Dilrong (이학성)"
               role="Developer"
             />
             <MemberCard
-              link="#"
-              image="members/dodori.png"
+              link="/"
+              image="/members/dodori.png"
               name="Dodori"
               role="Marketer"
             />
             <MemberCard
               link="https://twitter.com/BADBOY_WEB3"
-              image="members/badboy.png"
+              image="/members/badboy.png"
               name="Badboy"
               role="SUPER idiot"
             />
             <MemberCard
-              link="#"
-              image="members/고래절미.png"
+              link="/"
+              image="/members/고래절미.png"
               name="고래절미"
               role="Bot Developer"
             />
             <MemberCard
-              link="#"
-              image="members/우영기.png"
+              link="/"
+              image="/members/우영기.png"
               name="wooma(우영기)"
               role="Project Manager"
             />

@@ -10,7 +10,7 @@ interface Props {
 
 const ProductCard = ({ link, image, name, description }: Props) => {
   return (
-    <Link href={link} target="_blank">
+    <Link href={`${link}`} target="_blank">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-full" src={image} alt={name} />
         <div className="px-6 py-4">
