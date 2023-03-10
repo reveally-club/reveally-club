@@ -7,22 +7,18 @@ const Footer: React.FC = () => {
       <div className="container mx-auto md:flex md:items-center md:p-6 md:justify-between">
         <span className="text-sm text-gray-800 sm:text-cente">
           © 2022{" "}
-          <a href="https://reveally.club" className="hover:underline">
-            reveally.club
-          </a>
-          . All Rights Reserved.
+          <a
+            href="https://reveally.club"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400 hover:font-bold"
+          >
+            Reveally.club
+          </a>{" "}
+          All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center mt-3 gap-4 text-sm text-gray-800 sm:mt-0">
-          {/* <li>
-            <Link className="text-xs hover:underline" href="/brand">
-              About
-            </Link>
-          </li> */}
-          <li>
-            <Link className="text-xs hover:underline" href="/brand">
-              Brand Guide
-            </Link>
-          </li>
+        <ul className="flex flex-wrap items-center mt-3 text-sm text-gray-800 sm:mt-0">
+          {/* <Link href="/brand" className="text-xs hover:font-bold">
+            Brand
+          </Link> */}
         </ul>
       </div>
     </footer>

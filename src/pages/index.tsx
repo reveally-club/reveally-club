@@ -69,7 +69,7 @@ const Home = () => {
           <h3 className="mt-4 text-2xl italic text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-violet-400">
             &quot;You can be a member if you want.&quot;
           </h3>
-          <div className="mt-6 flex flex-wrap justify-center  md:flex-row flex-col gap-8">
+          <div className="mt-6 flex flex-wrap justify-center md:flex-row flex-col gap-8">
             <MemberCard
               link="https://twitter.com/dilrong_"
               image="/members/dilrong.png"
