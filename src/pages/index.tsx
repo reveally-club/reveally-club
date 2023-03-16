@@ -36,7 +36,7 @@ const Home = () => {
               link="https://discord.gg/nNr2DRk3gp"
               image="/products/whales-club.png"
               name="Whales.club"
-              description="NFT Wallet Wallet Tracking Data Visualization Solution, Whales.club"
+              description="NFT Wallet Tracking Data Visualization Solution, Whales.club"
             />
             <ProductCard
               link="https://life.reveally.club"
@@ -87,12 +87,6 @@ const Home = () => {
               image="/members/badboy.png"
               name="Badboy"
               role="SUPER idiot"
-            />
-            <MemberCard
-              link="/"
-              image="/members/고래절미.png"
-              name="고래절미"
-              role="Bot Developer"
             />
             <MemberCard
               link="/"
