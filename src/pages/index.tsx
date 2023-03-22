@@ -80,7 +80,7 @@ const Home = () => {
               link="/"
               image="/members/dodori.png"
               name="Dodori"
-              role="Marketer"
+              role="Supporter"
             />
             <MemberCard
               link="https://twitter.com/BADBOY_WEB3"
@@ -92,7 +92,7 @@ const Home = () => {
               link="/"
               image="/members/우영기.png"
               name="wooma(우영기)"
-              role="Project Manager"
+              role="Markter"
             />
           </div>
         </article>
