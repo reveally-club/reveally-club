@@ -33,10 +33,10 @@ const Home = () => {
           </h3>
           <div className="mt-6 flex flex-wrap justify-center md:flex-row flex-col gap-8">
             <ProductCard
-              link="https://discord.gg/nNr2DRk3gp"
+              link="https://whales.reveally.club"
               image="/products/whales-club.png"
               name="Whales.club"
-              description="NFT Wallet Tracking Data Visualization Solution, Whales.club"
+              description="Wallet tracking and onchain data visualization solution, Whales.club"
             />
             <ProductCard
               link="https://life.reveally.club"
